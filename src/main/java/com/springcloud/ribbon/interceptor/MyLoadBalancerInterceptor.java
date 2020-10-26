@@ -11,10 +11,19 @@ import org.springframework.util.Assert;
 import java.io.IOException;
 import java.net.URI;
 
+
+/**
+ * 模仿@LoadBalanced 注解为何可以实现负载均衡
+ */
 public class MyLoadBalancerInterceptor implements ClientHttpRequestInterceptor {
 
     private LoadBalancerClient loadBalancer;
     private LoadBalancerRequestFactory requestFactory;
+
+    public MyLoadBalancerInterceptor(){
+
+    }
+
 
 
     public MyLoadBalancerInterceptor(LoadBalancerClient loadBalancer, LoadBalancerRequestFactory requestFactory) {
@@ -24,6 +33,7 @@ public class MyLoadBalancerInterceptor implements ClientHttpRequestInterceptor {
     public MyLoadBalancerInterceptor(LoadBalancerClient loadBalancer) {
         this(loadBalancer, new LoadBalancerRequestFactory(loadBalancer));
     }
+
     @Override
     public ClientHttpResponse intercept(final HttpRequest request, final byte[] body,
                                         final ClientHttpRequestExecution execution) throws IOException {

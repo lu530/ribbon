@@ -6,3 +6,12 @@ swagger:
   title: my swagger
   description: my good swagger
   version: 1.0
+
+ribbon:
+  eureka:
+    enabled: false
+
+
+ribbon-config-demo:
+  ribbon:
+    listOfServers: localhost:8182

@@ -2,10 +2,13 @@ package com.springcloud.ribbon.controller;
 
 
 import com.springcloud.ribbon.bean.HouseInfo;
+import com.springcloud.ribbon.client.UserRemoteClient;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HouseController {
+
 
 
     @GetMapping("/house/data")
@@ -23,5 +26,15 @@ public class HouseController {
         System.out.println(houseInfo.getName());
         return 1001L;
     }
+
+
+    @GetMapping("/house/hollo")
+    public String hello() {
+        System.out.println("hallo hallo ya");
+        return "hallo hallo ya";
+    }
+
+
+
 
 }

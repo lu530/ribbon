@@ -2,6 +2,7 @@ package com.springcloud.ribbon.controller;
 
 
 import com.springcloud.ribbon.bean.HouseInfo;
+import com.springcloud.ribbon.client.UserRemoteClient;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiOperation;
@@ -15,6 +16,9 @@ import org.springframework.web.client.RestTemplate;
 @Api(value = "desc of HouseClientController class")
 @RestController
 public class HouseClientController {
+
+    @Autowired
+    private UserRemoteClient UserRemoteClient;
 
     @Autowired
     RestTemplate restTemplate;
@@ -39,6 +43,14 @@ public class HouseClientController {
         houseInfo.setName("×××");
         Long id = restTemplate.postForObject("http://localhost:8182/house/save", houseInfo, Long.class);
         return id;
+    }
+
+    @ApiOperation(value = "desc of callHello method", notes = "")
+    @GetMapping("/callHello")
+    public String callHello(){
+        String hello = UserRemoteClient.hello();
+        System.out.println("远程调用返回的结果为：" + hello);
+        return "hello hello ya handsome boy";
     }
 
 }
