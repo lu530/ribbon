@@ -122,18 +122,25 @@
         </dependency>
 
 
-        <!-- 服务注册中心要使用，eureka客户端不用 -->
+        <!-- 服务注册中心要使用，eureka客户端不用
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>
             <version>1.3.5.RELEASE</version>
-        </dependency>
+        </dependency>-->
         <!-- 服务提供者，eureka客户端需要使用 -->
-    <!--    <dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
             <version>1.3.5.RELEASE</version>
-        </dependency>-->
+        </dependency>
+
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-core</artifactId>
+            <version>1.5.18</version>
+        </dependency>
+
         <!-- Feign远程调用，需要调用服务接口可以使用 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

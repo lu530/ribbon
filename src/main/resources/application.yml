@@ -15,3 +15,7 @@ ribbon:
 ribbon-config-demo:
   ribbon:
     listOfServers: localhost:8182
+
+feign:
+  hystrix:
+    enabled: false

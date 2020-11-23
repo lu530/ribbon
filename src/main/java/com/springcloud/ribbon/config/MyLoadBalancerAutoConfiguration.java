@@ -5,7 +5,6 @@ import com.springcloud.ribbon.annotations.MyLoadBalanced;
 import com.springcloud.ribbon.interceptor.MyLoadBalancerInterceptor;
 import org.springframework.beans.factory.SmartInitializingSingleton;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
@@ -16,6 +15,7 @@ import java.util.Collections;
 import java.util.List;
 
 //然后定义一个配置类，给 RestTemplate 注入拦截器
+//做个工具出来，在上面输入百度云的链接后保存后，可以保存一份到自己的DNS上 bt 才是最好的存储吧
 @Configuration
 public class MyLoadBalancerAutoConfiguration {
 

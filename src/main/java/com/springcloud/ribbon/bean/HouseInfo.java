@@ -30,4 +30,6 @@ public class HouseInfo implements Serializable {
         this.region = region;
         this.address = address;
     }
+
+
 }
