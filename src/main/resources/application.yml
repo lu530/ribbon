@@ -19,3 +19,7 @@ ribbon-config-demo:
 feign:
   hystrix:
     enabled: false
+
+yitu:
+  service:
+    url: http://localhost:8182
